@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Digital - Plan Anual Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cmBlue: '#1F3C88',
+                        cmSecBlue: '#3F72AF',
+                        cmYellow: '#F2C94C',
+                        cmWhite: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; margin: 0; padding: 0; }
+        .tab-btn { transition: all 0.3s ease; }
+        .tab-btn.active { background-color: #F2C94C; color: #1F3C88; font-weight: bold; }
+        .tab-btn.inactive { background-color: #3F72AF; color: #FFFFFF; }
+        .tab-btn.inactive:hover { background-color: #1F3C88; }
+        
+        /* Prohibición de negritas según reglas, usamos cursivas para énfasis */
+        em, i { font-style: italic; color: #1F3C88; }
+        h1, h2, h3, h4 { font-weight: normal; font-style: italic; color: #1F3C88; margin-bottom: 1rem; }
+        
+        /* Estilos de tarjetas */
+        .card { background-color: #FFFFFF; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .list-item { margin-bottom: 0.75rem; line-height: 1.5; }
+        .list-item i { margin-right: 0.5rem; }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+
+    <!-- Encabezado Institucional -->
+    <header class="bg-cmBlue text-cmWhite p-4 shadow-md flex justify-between items-center z-10 relative">
+        <div class="flex items-center space-x-4">
+            <img src="https://admisiones.colegiomontano.edu.gt/assets/img/logo-cm-blanco.webp" alt="Colegio Montano Logo" class="h-[50px] object-contain">
+            <div>
+                <h1 class="text-xl m-0 text-cmWhite"><i>Plan Anual Escolar</i></h1>
+                <p class="text-sm opacity-90">
+                    <i>Curso:</i> Química &nbsp;|&nbsp; 
+                    <i>Grado:</i> Quinto Bachillerato (Pre-Ingeniería) &nbsp;|&nbsp; 
+                    <i>Profesor:</i> Silvia Hernández &nbsp;|&nbsp; 
+                    <i>Ciclo:</i> 2027
+                </p>
+            </div>
+        </div>
+        <button onclick="toggleFullscreen()" class="bg-cmYellow text-cmBlue px-4 py-2 rounded shadow hover:bg-yellow-400 transition flex items-center">
+            <span class="mr-2">🖥️</span> <i>Pantalla Completa</i>
+        </button>
+    </header>
+
+    <!-- Navegación por Pestañas -->
+    <nav class="bg-cmSecBlue shadow-inner overflow-x-auto whitespace-nowrap flex">
+        <button onclick="openTab(event, 'tab-I')" class="tab-btn active px-6 py-3 border-r border-cmBlue/30 text-sm focus:outline-none">I) Descriptor</button>
+        <button onclick="openTab(event, 'tab-II')" class="tab-btn inactive px-6 py-3 border-r border-cmBlue/30 text-sm focus:outline-none">II) Objetivos</button>
+        <button onclick="openTab(event, 'tab-III')" class="tab-btn inactive px-6 py-3 border-r border-cmBlue/30 text-sm focus:outline-none">III) Competencias</button>
+        <button onclick="openTab(event, 'tab-IV')" class="tab-btn inactive px-6 py-3 border-r border-cmBlue/30 text-sm focus:outline-none">IV) Indicadores</button>
+        <button onclick="openTab(event, 'tab-V')" class="tab-btn inactive px-6 py-3 border-r border-cmBlue/30 text-sm focus:outline-none">V) Métodos</button>
+        <button onclick="openTab(event, 'tab-VI')" class="tab-btn inactive px-6 py-3 border-r border-cmBlue/30 text-sm focus:outline-none">VI) Bibliografía</button>
+        <button onclick="openTab(event, 'tab-VII')" class="tab-btn inactive px-6 py-3 text-sm focus:outline-none">VII) Contenidos</button>
+    </nav>
+
+    <!-- Contenido de la Pizarra -->
+    <main class="flex-grow overflow-y-auto p-6 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- I) Descriptor -->
+            <section id="tab-I" class="tab-content card block">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">I) Descriptor del Curso</h2>
+                <div class="mt-4 text-gray-700 space-y-4 text-justify">
+                    <p>En este curso se promueve en los estudiantes el interés por el aprendizaje de la química, a reflexionar acerca de la aplicación de diversas reacciones químicas en el contexto ambiental y sus aplicaciones. Analizando el impacto social y ambiental de la producción de algunos compuestos químicos, de las ventajas y desventajas de su aplicación, valorando así el papel de ciencia y tecnología en la calidad de vida de las personas.</p>
+                    <p>Se les explica las diferentes reacciones químicas inorgánicas y orgánicas que ocurren en algunos procesos biológicos e industriales y la importancia de las sustancias químicas (nomenclatura) en la vida diaria.</p>
+                    <p>La química por ser una ciencia experimental, se hace parte de todo los que nos rodea, por eso a los estudiantes se le promueve una actitud científica mediante proyectos de investigación, para poder desarrollar un pensamiento analítico lógico, que le será útil para la resolución de problemas de la vida cotidiana, aplicando los pasos de método científico.</p>
+                    <p>Se practica la lectura comprensiva en cada período de clase y se aplica el conocimiento adquirido en el trabajo individual y trabajo en equipo realizando ejercicios de aplicación, investigaciones, presentaciones orales, exposiciones en la feria científica, resolución de problemas, tiene iniciativa, siempre buscando la mejora continua.</p>
+                    
+                    <h3 class="text-xl mt-6"><i>Valores y Creencias Institucionales</i></h3>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>Libertad de decisión con la responsabilidad de las consecuencias</li>
+                        <li>Honestidad y sinceridad</li>
+                        <li>Humildad</li>
+                        <li>Respeto profundo con las personas y el ambiente ecológico</li>
+                        <li>Tolerancia a diferentes formas de pensar</li>
+                        <li>Trabajar siempre en equipo</li>
+                        <li>Amistad laboral entre el personal</li>
+                        <li>Lealtad e identificación con el Colegio</li>
+                        <li>Colaboración con compañeros y Colegio</li>
+                        <li>Generosidad</li>
+                        <li>Solidaridad</li>
+                        <li>Calidad en todo lo que hacemos</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- II) Objetivos -->
+            <section id="tab-II" class="tab-content card hidden">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">II) Objetivos Generales</h2>
+                <ul class="mt-4 text-gray-700 space-y-3 pl-2">
+                    <li class="list-item"><i>1.</i> Reconocer la importancia de la Química inorgánica en el desarrollo científico y tecnológico.</li>
+                    <li class="list-item"><i>2.</i> Promover en los estudiantes el interés por el aprendizaje y la experimentación en Química inorgánica.</li>
+                    <li class="list-item"><i>3.</i> Explicar las reacciones químicas inorgánicas que ocurren en los procesos industriales y biológicos.</li>
+                    <li class="list-item"><i>4.</i> Reflexionar acerca de las aplicaciones de diversas reacciones químicas en el contexto ambiental, desarrollando comprensión de la realidad y pensamiento crítico.</li>
+                </ul>
+            </section>
+
+            <!-- III) Competencias -->
+            <section id="tab-III" class="tab-content card hidden">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">III) Competencias</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                    <div>
+                        <h3 class="text-xl mb-3"><i>Competencias del Área (Química)</i></h3>
+                        <ul class="text-gray-700 space-y-2 pl-4 border-l-4 border-cmSecBlue">
+                            <li class="list-item">Argumenta la importancia de la química y su impacto en la sociedad.</li>
+                            <li class="list-item">Compara diferentes métodos científicos, diferenciando entre hipótesis y teoría.</li>
+                            <li class="list-item">Describe y aplica el método científico en la resolución de problemas.</li>
+                            <li class="list-item">Reconoce las diferentes estructuras de la materia, consolidando el estudio de los elementos como sustancias puras.</li>
+                            <li class="list-item">Identifica la estructura atómica de los elementos y explica cómo define su comportamiento.</li>
+                            <li class="list-item">Reconoce la importancia de la organización de la tabla periódica (número atómico, masa atómica, electronegatividad).</li>
+                            <li class="list-item">Diferencia e identifica clases de reacciones químicas y procesos de transformación de sustancias.</li>
+                            <li class="list-item">Explica la Estequiometría a partir de la relación masa-mol en reacciones químicas.</li>
+                            <li class="list-item">Diferencia clases de hidrocarburos en base a su estructura, nomenclatura y grupo funcional.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl mb-3"><i>Competencias Institucionales CM</i></h3>
+                        <ul class="text-gray-700 space-y-2 pl-4 border-l-4 border-cmYellow bg-yellow-50 p-4 rounded">
+                            <li class="list-item"><i>1.</i> Pensamiento crítico y resolución de problemas</li>
+                            <li class="list-item"><i>2.</i> Colaboración y trabajo en equipo</li>
+                            <li class="list-item"><i>3.</i> Competencias digitales</li>
+                            <li class="list-item"><i>4.</i> Comunicación efectiva</li>
+                            <li class="list-item"><i>5.</i> Creatividad e innovación</li>
+                            <li class="list-item"><i>6.</i> Aprendizaje autónomo y adaptabilidad</li>
+                            <li class="list-item"><i>7.</i> Conciencia global y cultural</li>
+                            <li class="list-item"><i>8.</i> Ética y ciudadanía digital</li>
+                            <li class="list-item"><i>9.</i> Gestión emocional y resiliencia</li>
+                            <li class="list-item"><i>10.</i> Conciencia ecológica y sostenibilidad</li>
+                            <li class="list-item"><i>11.</i> Desempeño de roles de liderazgo</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IV) Indicadores -->
+            <section id="tab-IV" class="tab-content card hidden">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">IV) Indicadores de Logro</h2>
+                <p class="mt-2 text-sm text-gray-500 mb-4"><i>Nota: Propuestos en base a las competencias y contenidos del curso para evaluación y emisión de juicios.</i></p>
+                <ul class="mt-4 text-gray-700 space-y-3 pl-2">
+                    <li class="list-item"><i>1.</i> Resuelve problemas matemáticos aplicados a la química, calculando masa molar, composición porcentual y fórmulas empíricas.</li>
+                    <li class="list-item"><i>2.</i> Balancea ecuaciones químicas utilizando diferentes métodos y determina reactivos limitantes y en exceso en reacciones dadas.</li>
+                    <li class="list-item"><i>3.</i> Aplica las leyes de los gases (Dalton, gas ideal) para resolver cálculos de presión, volumen y temperatura en situaciones controladas.</li>
+                    <li class="list-item"><i>4.</i> Nombra correctamente compuestos orgánicos (alcanos, alquenos, alquinos, alcoholes) de acuerdo a las normas de nomenclatura internacional.</li>
+                    <li class="list-item"><i>5.</i> Participa en experimentos de laboratorio y ferias científicas documentando sus observaciones sistemáticamente a través del método científico.</li>
+                </ul>
+            </section>
+
+            <!-- V) Métodos -->
+            <section id="tab-V" class="tab-content card hidden">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">V) Métodos Didácticos CM</h2>
+                <div class="mt-4 text-gray-700 space-y-4">
+                    <p>El Colegio Montano aplica un modelo activo-colaborativo fundamentado en metodologías clave como el <i>Aprendizaje Basado en Proyectos (ABP)</i> y el <i>Constructivismo</i>.</p>
+                    
+                    <h3 class="text-xl mt-4"><i>Estructura del Período Doble (70 minutos)</i></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-cmBlue">
+                            <h4 class="text-lg"><i>1. Introducción Motivante</i></h4>
+                            <p class="text-sm">Activación de presaberes mediante juegos, dinamización y lluvia de ideas para captar la atención.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-cmSecBlue">
+                            <h4 class="text-lg"><i>2. Trabajo Individual</i></h4>
+                            <p class="text-sm">Desarrollo de potencialidades, habilidades y destrezas individuales a través de guías y análisis.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded border-l-4 border-cmYellow">
+                            <h4 class="text-lg"><i>3. Trabajo en Equipo</i></h4>
+                            <p class="text-sm">Interacción con roles definidos bajo la consigna <i>"todos para uno y uno para todos"</i> fomentando la colaboración.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border-l-4 border-gray-400">
+                            <h4 class="text-lg"><i>4. Plenaria</i></h4>
+                            <p class="text-sm">Exposición pública de los hallazgos, diálogo socrático reflexivo y establecimiento de lectura previa en casa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VI) Bibliografía -->
+            <section id="tab-VI" class="tab-content card hidden">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">VI) Bibliografía</h2>
+                <ul class="mt-4 text-gray-700 space-y-4 pl-4 list-none">
+                    <li class="flex items-start">
+                        <span class="text-cmBlue mr-2">📚</span>
+                        <span><i>Currículo Nacional Base.</i> Mineduc. Guatemala.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cmBlue mr-2">📚</span>
+                        <span>Raymond Chang. <i>Química General para Bachillerato.</i> Editorial Mc Graw Hill Education, 2013.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cmBlue mr-2">📚</span>
+                        <span>Teodore, et al. <i>Química la Ciencia Central.</i> México D.F: Prentice Hall, Hispanoamericana, 1998.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- VII) Contenidos -->
+            <section id="tab-VII" class="tab-content card hidden">
+                <h2 class="text-2xl border-b-2 border-cmYellow pb-2">VII) Contenidos Anuales</h2>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Unidad I -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <div class="bg-cmSecBlue text-white p-2 text-center"><i>UNIDAD I</i></div>
+                        <div class="p-4 bg-white h-full">
+                            <ul class="list-disc pl-4 text-sm text-gray-700 space-y-1">
+                                <li>Masa atómica</li>
+                                <li>Número de Avogadro</li>
+                                <li>Masa Molar</li>
+                                <li>El espectrómetro de masas</li>
+                                <li>Composición porcentual de los compuestos</li>
+                                <li>Fórmula experimental (empírica y molecular)</li>
+                                <li>Reacciones y ecuaciones químicas</li>
+                                <li>Tipos de reacciones químicas</li>
+                                <li>Balanceo de ecuaciones químicas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Unidad II -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <div class="bg-cmSecBlue text-white p-2 text-center"><i>UNIDAD II</i></div>
+                        <div class="p-4 bg-white h-full">
+                            <ul class="list-disc pl-4 text-sm text-gray-700 space-y-1">
+                                <li>Estequiometría</li>
+                                <li>Cantidades de reactivos y productos</li>
+                                <li>Reactivo limitante y Reactivo en exceso</li>
+                                <li>Rendimiento de la reacción</li>
+                                <li>Gases y sustancias que existen como gases</li>
+                                <li>Presión de un gas</li>
+                                <li>La ecuación del gas ideal</li>
+                                <li>Las leyes de los gases</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Unidad III -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <div class="bg-cmSecBlue text-white p-2 text-center"><i>UNIDAD III</i></div>
+                        <div class="p-4 bg-white h-full">
+                            <ul class="list-disc pl-4 text-sm text-gray-700 space-y-1">
+                                <li>La ley de Dalton de las presiones parciales</li>
+                                <li>Estequiometría de gases</li>
+                                <li>La teoría cinética molecular de los gases</li>
+                                <li>Química orgánica</li>
+                                <li>Propiedades del Carbono</li>
+                                <li>Grupos funcionales de los compuestos orgánicos</li>
+                                <li>Compuestos aromáticos y alifáticos del Carbono</li>
+                                <li>Alcanos: Propiedades, nomenclatura e importancia</li>
+                                <li>Alquenos y alquinos: Propiedades, nomenclatura e importancia</li>
+                                <li>Alcoholes, Fenoles y Bencenos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Unidad IV -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm border-cmYellow">
+                        <div class="bg-cmYellow text-cmBlue p-2 text-center"><i>UNIDAD IV (Propuesta de Integración)</i></div>
+                        <div class="p-4 bg-white h-full">
+                            <ul class="list-disc pl-4 text-sm text-gray-700 space-y-1">
+                                <li>Aldehídos y Cetonas: Estructura y nomenclatura</li>
+                                <li>Ácidos Carboxílicos y sus derivados</li>
+                                <li>Macromoléculas y Polímeros sintéticos</li>
+                                <li>Impacto ambiental de los derivados del petróleo</li>
+                                <li>Química en la biotecnología y procesos industriales</li>
+                                <li>Proyecto Final de Investigación Científica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.add("hidden");
+                tabContents[i].classList.remove("block");
+            }
+
+            // Restablecer estilos de botones
+            const tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+                tabBtns[i].classList.add("inactive");
+            }
+
+            // Mostrar la pestaña seleccionada y marcar botón como activo
+            document.getElementById(tabName).classList.remove("hidden");
+            document.getElementById(tabName).classList.add("block");
+            evt.currentTarget.classList.remove("inactive");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function toggleFullscreen() {
+            const elem = document.documentElement;
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
